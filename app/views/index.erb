@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Welcome to our bitly version</h1>
+  <h2> Type in a URL and we'll create a shortened version for you </h2>
+
+  <form name="input" action="/urls" method="post">
+    URL: <input type="text" name="submitted_url"><br>
+    <input type="submit" value="submit">
+
+  </form>
+</div>
+
+<div class="container">
+  <h1> List of created URLs </h1>
+  <% if @urls %>
+    <% @urls.each do |url| %>
+      <form type>
+          <%= url.long_url %> is now  <a href="<%= url.long_url %>"> <%= url.short_url %> </a>
+      </form>
+    <% end %>
+  <% end %>
+</div>
