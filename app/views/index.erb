@@ -13,9 +13,7 @@
   <h1> List of created URLs </h1>
   <% if @urls %>
     <% @urls.each do |url| %>
-      <form type>
-          <%= url.long_url %> is now  <a href="<%= url.long_url %>"> <%= url.short_url %> </a>
-      </form>
+      <a href="/counter/<%= url.short_url %>"><%= url.long_url %></a>
     <% end %>
   <% end %>
 </div>
