@@ -11,6 +11,12 @@ get '/counter/:short_url' do
   redirect to "#{url.long_url}"
 end
 
+get '/:short_url' do
+  @url = Url.find_by_short_url(params[:short_url])
+  @url.clicked
+  redirect to "#{@url.long_url}"
+end
+
 # POST ======================================================================
 
 post '/urls' do
@@ -24,8 +30,3 @@ post '/update_db' do
   redirect to "#{@url.long_url}"
 end
 
-get '/:short_url' do
-  @url = Url.find_by_short_url(params[:short_url])
-  @url.clicked
-  redirect to "#{@url.long_url}"
-end

@@ -13,7 +13,7 @@
   <h1> List of created URLs </h1>
   <% if @urls %>
     <% @urls.each do |url| %>
-      <a href="/counter/<%= url.short_url %>"><%= url.long_url %></a>
+      <p> <%= url.long_url %> is now at <br> <a href="/counter/<%= url.short_url %>"> <%= url.short_url %></a></p>
     <% end %>
   <% end %>
 </div>
